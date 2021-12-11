@@ -2,7 +2,6 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/home')
 def home():
     return 'home page'
 
@@ -13,11 +12,11 @@ def intro():
 
 @app.route('/intro2')
 def intro2():
-    return 'intro page123'
+    return 'oh no the page is not ready'
 
-@app.route('/wrong')
+@app.route('/google')
 def wrong():
-    return 'oh no page not found!'
+    return 'google time'
 
 
 if __name__ == '__main__':
