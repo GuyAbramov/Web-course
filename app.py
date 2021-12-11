@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask ,redirect ,url_for
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,15 +8,21 @@ def home():
 
 @app.route('/intro')
 def intro():
-    return 'intro page'
+    #problem
+    return redirect('/intro2')
 
 @app.route('/intro2')
 def intro2():
     return 'oh no the page is not ready'
 
 @app.route('/google')
-def wrong():
-    return 'google time'
+def google():
+    return redirect(url_for('moogle'))
+
+@app.route('/moogle')
+def moogle():
+    return 'moogle time'
+
 
 
 if __name__ == '__main__':
